@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    color: #ffffff;
+    font-family: Roboto;
+    background: #000;
+
+}
+
+section{
+    padding-top: 20px;
+}
+.movie-row{
+    display: block;
+    
+ 
+    margin: 15px 0 15px 30px;
+}
+.movie-row div{
+    display: flex;
+    overflow-x: scroll;
+    align-items: center;
+
+    
+
+}
+
+.movie-row div img{
+    width: 150px;
+    height: 225px;
+    
+    transform: scale(0.9);
+    transition: all 0.2s;
+
+}
+
+.movie-row div img:hover{
+    cursor: pointer;
+
+    transform: scale(1);
+}
+
+.movie-row button{
+    display: none;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    background-color: #111;
+    color: #fff;
+
+    padding: 15px 0;
+
+    font-weight: lighter;
+
+
+}
+
+
+
+@media (min-width:1025px){
+.movie-row{
+    overflow-x: hidden;
+    position: relative;
+}
+.movie-row div{
+    display: flex;
+
+    overflow-x: hidden;
+
+    width: 3000px;
+
+    transition: all ease 1.5s;
+
+}
+.movie-row button{
+display: block;
+}
+
+.left{
+    width: 50px;
+    height: 190px;
+    
+    position: absolute;
+    top: 45px;
+    bottom: 0;
+    left: 0;
+
+    z-index: 1;
+
+    font-size: 20pt;
+    font-weight: bolder;
+
+    color: transparent;
+    background-color: transparent;
+
+    border: none;
+    border-radius: 3px;
+
+    transition: all ease 0.2s;
+}
+
+.movie-row:hover .left{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+.right{
+    width: 50px;
+    height: 190px;
+    
+    position: absolute;
+    top: 45px;
+    bottom: 0;
+    right: 10px;
+
+    z-index: 1;
+
+    font-size: 20pt;
+    font-weight: bolder;
+
+    color: transparent;
+    background-color: transparent;
+
+    border: none;
+    border-radius: 3px;
+
+    transition: all ease 0.2s;
+
+}
+
+.movie-row:hover .right{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+

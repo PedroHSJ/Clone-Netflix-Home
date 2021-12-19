@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="HeaderMovie.css">
+    <link rel="stylesheet" href="Movie-Row.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+
+    
+
+    <header>
+
+        <nav>
+            <a href="https://pedrohsj.github.io/Clone-Netflix/" target="_blank" ><img id="logo" src="img/logo.png" alt="Netflix"></a>
+            <a href="http://" target="_blank" ><img id="user" src="img/Netflix-avatar.png" alt="Avatar"></a>
+        </nav>
+
+        <div id="filtro">
+            <h1 id="titulo-header"></h1>
+
+            <div id="details">
+                <p id="pontuacao"></p>
+                <p id="year"></p>
+                
+            </div>
+            <p id="info"></p>
+
+        </div>
+    </header>
+
+    <section>
+        <div class="movie-row">
+            <h1>Originais do Netflix</h1>
+            <button class="left" onclick="LeftOriginals(originals)"><i class="fas fa-angle-left"></i></button>
+            <button class="right" onclick="RightOriginals(originals)"><i class="fas fa-angle-right"></i></button>
+            <div id="Originals">
+                
+            </div>
+        </div>
+
+        <div class="movie-row">
+            <button class='left' onclick="LeftRecomendado(recomendado)"><i class="fas fa-angle-left"></i></button>
+            <button class="right" onclick="RightRecomendado(recomendado)"><i class="fas fa-angle-right"></i></button>
+            <h1>Recomendados para você</h1>
+            <div id="Recomendado">
+                
+            </div>
+        </div>
+
+        <div class="movie-row">
+            <button class='left' onclick="LeftEmAlta(emAlta)"><i class="fas fa-angle-left"></i></button>
+            <button class="right" onclick="RightEmAlta(emAlta)"><i class="fas fa-angle-right"></i></button>
+            <h1>Em Alta</h1>
+            <div id="EmAlta">
+                
+            </div>
+        </div>
+
+        <div class="movie-row">
+            <button class='left' onclick="LeftAcao(acao)"><i class="fas fa-angle-left"></i></button>
+            <button class="right" onclick="RightAcao(acao)"><i class="fas fa-angle-right"></i></button>
+            <h1>Ação</h1>
+            <div id="Acao">
+                
+            </div>
+        </div>
+
+        <div class="movie-row">
+            <button class='left' onclick="LeftAnimacao(animacao)"><i class="fas fa-angle-left"></i></button>
+            <button class="right" onclick="RightAnimacao(animacao)"><i class="fas fa-angle-right"></i></button>
+            <h1>Animação</h1>
+            <div id="Animacao">
+                
+            </div>
+        </div>
+
+        <div class="movie-row">
+            <button class='left' onclick="LeftTerror(terror)"><i class="fas fa-angle-left"></i></button>
+            <button class="right" onclick="RightTerror(terror)"><i class="fas fa-angle-right"></i></button>
+            <h1>Terror</h1>
+            <div id="Terror">
+                
+            </div>
+        </div>
+
+        <div class="movie-row">
+            <button class='left' onclick="LeftRomance(romance)"><i class="fas fa-angle-left"></i></button>
+            <button class="right" onclick="RightRomance(romance)"><i class="fas fa-angle-right"></i></button>
+            <h1>Romance</h1>
+            <div id="Romance">
+                
+            </div>
+        </div>
+
+        <div class="movie-row">
+            <button class='left' onclick="LeftDocumentario(documentario)"><i class="fas fa-angle-left"></i></button>
+            <button class="right" onclick="RightDocumentario(documentario)"><i class="fas fa-angle-right"></i></button>
+            <h1>Documentário</h1>
+            <div id="Documentario">
+                
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <span>Desenvolvido por Pedro H.</span>
+        <span>Direitos de imagem para Netflix</span>
+        <span>Dados pegos do site Themoviedb.org</span>
+    </footer>
+
+
+
+
+
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="HeaderMovie.js"></script>
+    <script src="Movie-Row.js"></script>
+</body>
+
+</html>

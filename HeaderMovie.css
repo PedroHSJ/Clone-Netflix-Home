@@ -1,0 +1,172 @@
+header{
+    height: 100vh;
+
+    background-position: center;
+    background-size: cover;
+
+
+    border-bottom: 2px solid #000;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+header nav{
+    height: 75px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 30px;
+
+    position: fixed;
+    z-index: 1;
+
+    background: transparent;
+
+    transition: all ease-in-out 0.2s;
+}
+
+header nav.black{
+    background: #111;
+}
+
+
+
+#logo{
+    width: 150px;
+}
+
+#user{
+    width: 50px;
+
+    border-radius: 3px;
+}
+
+#filtro{
+    height: 100%;
+    text-align: left;
+
+    padding: 70px 10px 10px 30px;
+
+    
+    background: linear-gradient(90deg, #000 30%, transparent);
+
+    overflow-y: scroll;
+}
+
+#filtro h1{
+    font-size: 40pt;
+    font-weight: bolder;
+}
+
+
+
+
+#details{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+#info{
+    font-size: 18pt;
+    font-weight: normal;
+}
+
+#pontuacao{
+    color: #46d369;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+#year{
+    font-weight: bolder;
+    margin-left: 15px;
+    font-size: 20px;
+}
+
+#buttons{
+    display: none;
+}
+
+
+@media (min-width:1024px){
+    header{
+        background-position: top;
+    }
+    
+    #filtro{
+        overflow-y: hidden;
+
+    }
+
+    #filtro h1{
+        font-size: 48pt;
+        font-weight: bolder;
+    }
+    
+    #details{
+        display: flex;
+        justify-content: left;
+        align-items: left;
+
+        width: 200px;
+
+        
+    }
+
+    
+    
+    #filtro h1, #filtro p{
+        width: 550px;
+    }
+
+    #buttons{
+        display: block;
+        
+    }
+
+    #buttons button{
+        height: 50px;
+        width: 140px;
+
+        margin: 10px 10px 0 0;
+
+        border: none;
+        border-radius: 5px;
+
+        font-size: 18px;
+        font-weight: bolder;
+
+        transition: all 0.2s;
+
+        padding: 10px;
+    }
+
+    #assistir{
+        background: #fff;
+        color: #000;
+        
+    }
+
+    #assistir:hover{
+        background: rgba(255, 255, 255, 0.692);
+        cursor: pointer;
+    }
+
+    #lista{
+        background: #111;
+        color: #fff;
+
+    }
+
+    #lista:hover{
+        cursor: pointer;
+        background-color: rgb(44, 43, 43);
+    }
+}

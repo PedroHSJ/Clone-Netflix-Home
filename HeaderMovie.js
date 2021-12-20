@@ -1,7 +1,7 @@
 const Api_Base = 'https://api.themoviedb.org/3';
 const API_Key = 'fa8367b24166839e18a329a3a990a6a3';
 
-const Genero_recomendado = `/trending/tv/week?language=pt-BR&api_key=${API_Key}`;
+const FilmesHeader = `/trending/all/day?language=pt-BR&api_key=${API_Key}`
 
 const header = document.getElementsByTagName("header")[0];
 const filtro = document.getElementById('filtro');
@@ -32,12 +32,26 @@ function Random(max) {
 }
 
 
+function isKeyExists(obj, key) {
+    return obj.hasOwnProperty(key);
+}
+
 function InfoHeader(chosen) {
 
-    h1.innerHTML = chosen.name;
-    info.innerHTML = chosen.overview;
-    pontuacao.innerHTML = chosen.vote_average + ' pontos';
-    year.innerHTML = chosen.first_air_date.split('-')[0];
+    if (isKeyExists(chosen, 'name')) {
+
+
+        h1.innerHTML = chosen.name;
+        info.innerHTML = chosen.overview;
+        pontuacao.innerHTML = chosen.vote_average + ' pontos';
+        year.innerHTML = chosen.first_air_date.split('-')[0];
+    } else {
+
+        h1.innerHTML = chosen.title;
+        info.innerHTML = chosen.overview;
+        pontuacao.innerHTML = chosen.vote_average + ' pontos';
+        year.innerHTML = chosen.release_date.split('-')[0];
+    }
 
 
 
@@ -51,40 +65,51 @@ function InfoHeader(chosen) {
 };
 
 window.onload = setInterval(() => {
-    axios.get(`${Api_Base}${Genero_recomendado}`)
+    axios.get(`${Api_Base}${FilmesHeader}`)
         .then(response => {
             const i = Random(response.data.results.length - 1);
 
             const chosen = response.data.results[i];
 
             header.style.backgroundImage = `url(https://image.tmdb.org/t/p/original/${chosen.backdrop_path})`;
-            console.log(chosen)
+
             InfoHeader(chosen)
         })
 }, 300000)
 
-axios.get(`${Api_Base}${Genero_recomendado}`)
+axios.get(`${Api_Base}${FilmesHeader}`)
     .then(response => {
         const i = Random(response.data.results.length - 1);
 
         const chosen = response.data.results[i];
 
         header.style.backgroundImage = `url(https://image.tmdb.org/t/p/original/${chosen.backdrop_path})`;
-        console.log(chosen)
+
         InfoHeader(chosen)
+        console.log(response.data.results)
     });
+
+
+// // if (isKeyExists(response.data.results[1], 'name')) {
+//     console.log('existe')
+// } else console.log('nao existe')
+
+
+
+
+
 
 const nav = document.getElementsByTagName('nav')[0];
 
 
 
 window.addEventListener('scroll', () => {
-        if(scrollY >= 10){
-            nav.classList.add('black')
-        }else if(scrollY === 0){
-            nav.classList.remove('black')
-        }
-        console.log(scrollY)
+    if (scrollY >= 10) {
+        nav.classList.add('black')
+    } else if (scrollY === 0) {
+        nav.classList.remove('black')
+    }
+    console.log(scrollY)
 });
 
 

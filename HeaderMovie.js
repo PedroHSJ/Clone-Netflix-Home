@@ -86,16 +86,7 @@ axios.get(`${Api_Base}${FilmesHeader}`)
         header.style.backgroundImage = `url(https://image.tmdb.org/t/p/original/${chosen.backdrop_path})`;
 
         InfoHeader(chosen)
-        console.log(response.data.results)
     });
-
-
-// // if (isKeyExists(response.data.results[1], 'name')) {
-//     console.log('existe')
-// } else console.log('nao existe')
-
-
-
 
 
 
@@ -109,7 +100,6 @@ window.addEventListener('scroll', () => {
     } else if (scrollY === 0) {
         nav.classList.remove('black')
     }
-    console.log(scrollY)
 });
 
 

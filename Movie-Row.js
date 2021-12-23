@@ -22,66 +22,114 @@ const documentario = document.getElementById('Documentario');
 
 const div = document.getElementsByClassName('movie-row');
 
+function display(filme, div) {
+    let img = document.createElement('img');
+    img.src = `https://image.tmdb.org/t/p/w300/${filme.poster_path}`;
+
+    div.append(img);
+}
+
+function shuffle(array) {
+    return array.sort((a, b) => 0.5 - Math.random())
+}
 
 
 axios.get(`${API_BASE}${genero_originals}`)
     .then(response => {
-        const filmes = response.data.results.map((filme, i) => {
+        const filmes = response.data.results;
 
-            return `<img src="https://image.tmdb.org/t/p/w300/${filme.poster_path}" />`
-        }).join(' ');
-        originals.innerHTML += filmes;
+        console.log(filmes);
+        shuffle(filmes);
+        filmes.map(filme => {
+            display(filme, originals)
+        })
 
     })
 
 axios.get(`${API_BASE}${genero_recomendado}`)
     .then(response => {
-        const filmes = response.data.results.map(filme => {
-            return `<img src="https://image.tmdb.org/t/p/w300/${filme.poster_path}" />`
-        }).join(' ');
-        recomendado.innerHTML += filmes
+        const filmes = response.data.results;
+
+        console.log(filmes);
+        shuffle(filmes);
+        filmes.map(filme => {
+            display(filme, recomendado)
+        })
+
     })
 axios.get(`${API_BASE}${genero_EmAlta}`)
     .then(response => {
-        const filmes = response.data.results.map(filme => {
-            return `<img src="https://image.tmdb.org/t/p/w300/${filme.poster_path}" />`
-        }).join(' ');
-        emAlta.innerHTML += filmes
+        const filmes = response.data.results;
+        
+        console.log(filmes);
+        shuffle(filmes);
+        filmes.map(filme => {
+            display(filme, emAlta)
+        })
+
     })
+
+
 axios.get(`${API_BASE}${genero_acao}`)
     .then(response => {
-        const filmes = response.data.results.map(filme => {
-            return `<img src="https://image.tmdb.org/t/p/w300/${filme.poster_path}" />`
-        }).join(' ');
-        acao.innerHTML += filmes
+        const filmes = response.data.results;
+        
+        console.log(filmes);
+        shuffle(filmes);
+        filmes.map(filme => {
+            display(filme, acao)
+        })
+
     })
+
+
 axios.get(`${API_BASE}${genero_animacao}`)
     .then(response => {
-        const filmes = response.data.results.map(filme => {
-            return `<img src="https://image.tmdb.org/t/p/w300/${filme.poster_path}" />`
-        }).join(' ');
-        animacao.innerHTML += filmes
+        const filmes = response.data.results;
+        
+        console.log(filmes);
+        shuffle(filmes);
+        filmes.map(filme => {
+            display(filme, animacao)
+        })
+
     })
+
+
 axios.get(`${API_BASE}${genero_terror}`)
     .then(response => {
-        const filmes = response.data.results.map(filme => {
-            return `<img src="https://image.tmdb.org/t/p/w300/${filme.poster_path}" />`
-        }).join(' ');
-        terror.innerHTML += filmes
+        const filmes = response.data.results;
+        
+        console.log(filmes);
+        shuffle(filmes);
+        filmes.map(filme => {
+            display(filme, terror)
+        })
+
     })
+
 axios.get(`${API_BASE}${genero_romance}`)
     .then(response => {
-        const filmes = response.data.results.map(filme => {
-            return `<img src="https://image.tmdb.org/t/p/w300/${filme.poster_path}" />`
-        }).join(' ');
-        romance.innerHTML += filmes
+        const filmes = response.data.results;
+        
+        console.log(filmes);
+        shuffle(filmes);
+        filmes.map(filme => {
+            display(filme, romance)
+        })
+
     })
+
 axios.get(`${API_BASE}${genero_documentario}`)
     .then(response => {
-        const filmes = response.data.results.map(filme => {
-            return `<img src="https://image.tmdb.org/t/p/w300/${filme.poster_path}" />`
-        }).join(' ');
-        documentario.innerHTML += filmes
+        const filmes = response.data.results;
+        
+        console.log(filmes);
+        shuffle(filmes);
+        filmes.map(filme => {
+            display(filme, documentario)
+        })
+
     })
 
 

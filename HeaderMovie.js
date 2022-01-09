@@ -75,7 +75,7 @@ window.onload = setInterval(() => {
 
             InfoHeader(chosen)
         })
-}, 300000)
+}, 60000)
 
 axios.get(`${Api_Base}${FilmesHeader}`)
     .then(response => {

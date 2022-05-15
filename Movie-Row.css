@@ -145,6 +145,16 @@ display: block;
     color: #191919;
 }
 
+.all
+{
+    border: 5px solid #f00;
+    order: 0;
+}
+
+.order{
+    order: 5;
+}
+
 }
 
 

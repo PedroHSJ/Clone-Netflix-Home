@@ -26,7 +26,7 @@ function display(filme, div, index) {
     let img = document.createElement("img");
     img.src = `https://image.tmdb.org/t/p/w300/${filme.poster_path}`;
 
-    img.style.order = index;
+    // img.style.order = index;
     // img.style.border = "5px solid #FFF"
     div.append(img);
 }
@@ -55,175 +55,194 @@ getFilmes(genero_terror, terror);
 getFilmes(genero_romance, romance);
 getFilmes(genero_documentario, documentario);
 
-let count = 20;
-let index = 0;
-
+let scrollOriginals = 0;
 const LeftOriginals = (div) => {
-    index -= 1; //Decrementando o index para o item anterior "voltar"
-    //Testando se é o "primeiro" item.
-    if (count == 20) {
-        count == 0;
-        originals.children[index].style.order = 0;
-        count--;
-    
-    }
-     else {
-        originals.children[index].style.order = (count--)-21;
-        console.log(index);
+    scrollOriginals -= 500;
+    div.style.marginLeft = `${-scrollOriginals}px`;
+
+    if (scrollOriginals < 0) {
+        scrollOriginals = 0;
+        div.style.marginLeft = "0px";
     }
 };
 
 const RightOriginals = (div) => {
-    if (index > 19) {
-        index = 0;
+    scrollOriginals += 500;
+    div.style.marginLeft = `${-scrollOriginals}px`;
+    if(scrollOriginals > 2000){
+        scrollOriginals = 0;
+        div.style.marginLeft = "0px";
     }
-    originals.children[index++].style.order = count++;
-    console.log(index);
+    if (scrollOriginals == 1500) {
+        scrollOriginals += 250;
+        div.style.marginLeft = `${-scrollOriginals}px`;
+    }
 };
 
-// let scrollRecomendados = 0;
-// const LeftRecomendado = (div) => {
-//     scrollRecomendados -= 600;
-//     div.style.marginLeft = `${-scrollRecomendados}px`;
+let scrollRecomendados = 0;
+const LeftRecomendado = (div) => {
+    scrollRecomendados -= 500;
+    div.style.marginLeft = `${-scrollRecomendados}px`;
 
-//     if (scrollRecomendados < 0) {
-//         scrollRecomendados = 0;
-//         div.style.marginLeft = "0px";
-//     }
-// };
+    if (scrollRecomendados < 0) {
+        scrollRecomendados = 0;
+        div.style.marginLeft = "0px";
+    }
+};
 
-// const RightRecomendado = (div) => {
-//     scrollRecomendados += 600;
-//     div.style.marginLeft = `${-scrollRecomendados}px`;
+const RightRecomendado = (div) => {
+    scrollRecomendados += 500;
+    div.style.marginLeft = `${-scrollRecomendados}px`;
+    if(scrollRecomendados > 2000){
+        scrollRecomendados = 0;
+        div.style.marginLeft = "0px";
+    }
+    if (scrollRecomendados == 1500) {
+        scrollRecomendados += 250;
+        div.style.marginLeft = `${-scrollRecomendados}px`;
+    }
+};
 
-//     if (scrollRecomendados > 1950) {
-//         scrollRecomendados = 0;
-//         div.style.marginLeft = "0px";
-//     }
-// };
+let scrollEmAlta = 0;
+const LeftEmAlta = (div) => {
+    scrollEmAlta -= 500;
+    div.style.marginLeft = `${-scrollEmAlta}px`;
 
-// let scrollEmAlta = 0;
-// const LeftEmAlta = (div) => {
-//     scrollEmAlta -= 600;
-//     div.style.marginLeft = `${-scrollEmAlta}px`;
+    if (scrollEmAlta < 0) {
+        scrollEmAlta = 0;
+        div.style.marginLeft = "0px";
+    }
+};
 
-//     if (scrollEmAlta < 0) {
-//         scrollEmAlta = 0;
-//         div.style.marginLeft = "0px";
-//     }
-// };
+const RightEmAlta = (div) => {
+    scrollEmAlta += 500;
+    div.style.marginLeft = `${-scrollEmAlta}px`;
+    if(scrollEmAlta > 2000){
+        scrollEmAlta = 0;
+        div.style.marginLeft = "0px";
+    }
+    if (scrollEmAlta == 1500) {
+        scrollEmAlta += 250;
+        div.style.marginLeft = `${-scrollEmAlta}px`;
+    }
+};
 
-// const RightEmAlta = (div) => {
-//     scrollEmAlta += 600;
-//     div.style.marginLeft = `${-scrollEmAlta}px`;
+let scrollAcao = 0;
+const LeftAcao = (div) => {
+    scrollAcao -= 500;
+    div.style.marginLeft = `${-scrollAcao}px`;
 
-//     if (scrollEmAlta > 1950) {
-//         scrollEmAlta = 0;
-//         div.style.marginLeft = "0px";
-//     }
-// };
+    if (scrollAcao < 0) {
+        scrollAcao = 0;
+        div.style.marginLeft = "0px";
+    }
+};
 
-// let scrollAcao = 0;
-// const LeftAcao = (div) => {
-//     scrollAcao -= 600;
-//     div.style.marginLeft = `${-scrollAcao}px`;
+const RightAcao = (div) => {
+    scrollAcao += 500;
+    div.style.marginLeft = `${-scrollAcao}px`;
+    if(scrollAcao > 2000){
+        scrollAcao = 0;
+        div.style.marginLeft = "0px";
+    }
+    if (scrollAcao == 1500) {
+        scrollAcao += 250;
+        div.style.marginLeft = `${-scrollAcao}px`;
+    }
+};
 
-//     if (scrollAcao < 0) {
-//         scrollAcao = 0;
-//         div.style.marginLeft = "0px";
-//     }
-// };
+let scrollAnimacao = 0;
+const LeftAnimacao = (div) => {
+    scrollAnimacao -= 500;
+    div.style.marginLeft = `${-scrollAnimacao}px`;
 
-// const RightAcao = (div) => {
-//     scrollAcao += 600;
-//     div.style.marginLeft = `${-scrollAcao}px`;
+    if (scrollAnimacao < 0) {
+        scrollAnimacao = 0;
+        div.style.marginLeft = "0px";
+    }
+};
 
-//     if (scrollAcao > 1950) {
-//         scrollAcao = 0;
-//         div.style.marginLeft = "0px";
-//     }
-// };
+const RightAnimacao = (div) => {
+    scrollAnimacao += 500;
+    div.style.marginLeft = `${-scrollAnimacao}px`;
+    if(scrollAnimacao > 2000){
+        scrollAnimacao = 0;
+        div.style.marginLeft = "0px";
+    }
+    if (scrollAnimacao == 1500) {
+        scrollAnimacao += 250;
+        div.style.marginLeft = `${-scrollAnimacao}px`;
+    }
+};
 
-// let scrollAnimacao = 0;
-// const LeftAnimacao = (div) => {
-//     scrollAnimacao -= 600;
-//     div.style.marginLeft = `${-scrollAnimacao}px`;
+let scrollTerror = 0;
+const LeftTerror = (div) => {
+    scrollTerror -= 500;
+    div.style.marginLeft = `${-scrollTerror}px`;
 
-//     if (scrollAnimacao < 0) {
-//         scrollAnimacao = 0;
-//         div.style.marginLeft = "0px";
-//     }
-// };
+    if (scrollTerror < 0) {
+        scrollTerror = 0;
+        div.style.marginLeft = "0px";
+    }
+};
 
-// const RightAnimacao = (div) => {
-//     scrollAnimacao += 600;
-//     div.style.marginLeft = `${-scrollAnimacao}px`;
+const RightTerror = (div) => {
+    scrollTerror += 500;
+    div.style.marginLeft = `${-scrollTerror}px`;
+    if(scrollTerror > 2000){
+        scrollTerror = 0;
+        div.style.marginLeft = "0px";
+    }
+    if (scrollTerror == 1500) {
+        scrollTerror += 250;
+        div.style.marginLeft = `${-scrollTerror}px`;
+    }
+};
 
-//     if (scrollAnimacao > 1950) {
-//         scrollAnimacao = 0;
-//         div.style.marginLeft = "0px";
-//     }
-// };
+let scrollRomance = 0;
+const LeftRomance = (div) => {
+    scrollRomance -= 500;
+    div.style.marginLeft = `${-scrollRomance}px`;
 
-// let scrollTerror = 0;
-// const LeftTerror = (div) => {
-//     scrollTerror -= 600;
-//     div.style.marginLeft = `${-scrollTerror}px`;
+    if (scrollRomance < 0) {
+        scrollRomance = 0;
+        div.style.marginLeft = "0px";
+    }
+};
 
-//     if (scrollTerror < 0) {
-//         scrollTerror = 0;
-//         div.style.marginLeft = "0px";
-//     }
-// };
+const RightRomance = (div) => {
+    scrollRomance += 500;
+    div.style.marginLeft = `${-scrollRomance}px`;
+    if(scrollRomance > 2000){
+        scrollRomance = 0;
+        div.style.marginLeft = "0px";
+    }
+    if (scrollRomance == 1500) {
+        scrollRomance += 250;
+        div.style.marginLeft = `${-scrollRomance}px`;
+    }
+};
 
-// const RightTerror = (div) => {
-//     scrollTerror += 600;
-//     div.style.marginLeft = `${-scrollTerror}px`;
+let scrollDocumentario = 0;
+const LeftDocumentario = (div) => {
+    scrollDocumentario -= 500;
+    div.style.marginLeft = `${-scrollDocumentario}px`;
 
-//     if (scrollTerror > 1950) {
-//         scrollTerror = 0;
-//         div.style.marginLeft = "0px";
-//     }
-// };
+    if (scrollDocumentario < 0) {
+        scrollDocumentario = 0;
+        div.style.marginLeft = "0px";
+    }
+};
 
-// let scrollRomance = 0;
-// const LeftRomance = (div) => {
-//     scrollRomance -= 600;
-//     div.style.marginLeft = `${-scrollRomance}px`;
-
-//     if (scrollRomance < 0) {
-//         scrollRomance = 0;
-//         div.style.marginLeft = "0px";
-//     }
-// };
-
-// const RightRomance = (div) => {
-//     scrollRomance += 600;
-//     div.style.marginLeft = `${-scrollRomance}px`;
-
-//     if (scrollRomance > 1950) {
-//         scrollRomance = 0;
-//         div.style.marginLeft = "0px";
-//     }
-// };
-
-// let scrollDocumentario = 0;
-// const LeftDocumentario = (div) => {
-//     scrollDocumentario -= 600;
-//     div.style.marginLeft = `${-scrollDocumentario}px`;
-
-//     if (scrollDocumentario < 0) {
-//         scrollDocumentario = 0;
-//         div.style.marginLeft = "0px";
-//     }
-// };
-
-// const RightDocumentario = (div) => {
-//     scrollDocumentario += 600;
-//     div.style.marginLeft = `${-scrollDocumentario}px`;
-
-//     if (scrollDocumentario > 1950) {
-//         scrollDocumentario = 0;
-//         div.style.marginLeft = "0px";
-//     }
-// };
+const RightDocumentario = (div) => {
+    scrollDocumentario += 500;
+    div.style.marginLeft = `${-scrollDocumentario}px`;
+    if(scrollDocumentario > 2000){
+        scrollDocumentario = 0;
+        div.style.marginLeft = "0px";
+    }
+    if (scrollDocumentario == 1500) {
+        scrollDocumentario += 250;
+        div.style.marginLeft = `${-scrollDocumentario}px`;
+    }
+};
